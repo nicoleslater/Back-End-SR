@@ -7,4 +7,4 @@ movies.get("/", (req, res) => {
     .json( {success: true, data: {payload: "all the movies"}})
 });
 
-module.exports = bookmarks;
+module.exports = movies;
