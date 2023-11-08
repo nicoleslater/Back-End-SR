@@ -7,10 +7,10 @@ CREATE DATABASE movies_dev;
 CREATE TABLE movies (
     id SERIAL PRIMARY KEY, 
     title TEXT NOT NULL, 
-    year DEFAULT, 
+    released DATE, 
     genre TEXT, 
     rated TEXT, 
     director TEXT,
-    availableOnDVD BOOLEAN, 
+    availableOnDVD DEFAULT BOOLEAN, 
     ratings NUMERIC
 )
