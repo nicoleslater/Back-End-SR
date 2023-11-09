@@ -18,5 +18,5 @@ CREATE TABLE movies (
 CREATE TABLE favorites (
     id SERIAL PRIMARY KEY, 
     movie_ID INT, 
-    title TEXT 
+    reccomend BOOLEAN 
 )
