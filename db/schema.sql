@@ -11,7 +11,7 @@ CREATE TABLE movies (
     director TEXT,
     genre TEXT, 
     rated TEXT, 
-    imdb_ID NUMERIC,
-    is_favorite DEFAULT BOOLEAN, 
-    imdbRatings NUMERIC
+    imdb_ID INT,
+    is_favorite BOOLEAN, 
+    imdb_Ratings INT
 );
