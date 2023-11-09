@@ -14,3 +14,12 @@ CREATE TABLE movies (
     is_favorite BOOLEAN, 
     imdb_Ratings INT
 );
+
+-- CREATE TABLE favorites (
+--     id SERIAL PRIMARY KEY, 
+--     reccomend BOOLEAN,
+--     personal_rating NUMERIC,
+--     CHECK (rating >= 0 AND rating <= 5),
+--     movie_id INTEGER REFERENCES movies(id) 
+--     ON DELETE CASCADE
+-- )

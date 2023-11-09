@@ -7,9 +7,9 @@ const {
     createMovie,
     deleteMovie, 
     updateMovie
-} = require("../queries/movies");
+} = require("../queries/movies.js");
 
-const { checkName, checkBoolean } = require("../validations/checkBookmarks.js")
+const { checkName, checkBoolean } = require("../validations/checkMovies.js");
 const movies = express.Router();
 
 movies.get("/:id", async (req, res) => {

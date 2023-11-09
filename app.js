@@ -3,18 +3,19 @@ const cors = require("cors");
 
 const app = express();
 
-const movieController = require("./controllers/movieController");
+const moviesController = require("./controllers/moviesController");
 
 app.use(cors()); 
 app.use(express.json());
 
-app.use("/movies", movies)
+app.use("/movies", moviesController);
+
 app.get("/", (req, res) => {
-    res.send("Welcome to FilmHunters")
+    res.send("Welcome to Davon and Nicole's Favorite Movies!");
 });
 
 app.get("*", (req, res) => {
-    res.status(404).json({success: false, data: {error: "page not found"} })
+    res.status(404).json({success: false, data: {error: "Page is not found"} })
 });
 
 module.exports = app; 
