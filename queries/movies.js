@@ -22,6 +22,38 @@ const createMovie = async (movie) => {
     try {
         const createdMovie = await db.one("INSERT INTO movies (title, released, director, genre, rated, is_favorite, imdb_Ratings) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING * ", [movie.title, movie.released, movie.director, movie.genre, movie.is_favorite, movie.imdb_Ratings])
     } catch(error){
-        
+        return error 
     }
 };
+
+const deleteMovie = async (id) => {
+    try{
+        const deletedMovie = await db.one(
+            "DELETE from movies WHERE id = $1 RETURNING * ",
+            id
+        )
+        return deletedMovie
+    } catch(error){
+        return error
+    }
+};
+
+const updateMovie = async(id, movie) => {
+    try {
+        const {title, released, director, genre, rated, is_favorite, imdb_Ratings} = movie;
+        const updatedMovie = await db.one(
+            "UPDATE movies SET title=$1, released=$2, director=$3, genre=$4, rated=$5, is_favorite=$6, imdb_Ratings=$7 RETURNING *", [title, released, director, genre, rated, is_favorite, imdbRatings, id]
+        );
+        return updatedMovie
+    } catch (err){
+        return err
+    }
+};
+
+module.exports = { 
+    getAllMovies,
+    getOneMovie, 
+    createMovie,
+    deleteMovie, 
+    updateMovie
+}
