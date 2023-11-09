@@ -8,9 +8,10 @@ CREATE TABLE movies (
     id SERIAL PRIMARY KEY, 
     title TEXT NOT NULL, 
     released DATE, 
+    director TEXT,
     genre TEXT, 
     rated TEXT, 
-    director TEXT,
-    availableOnDVD DEFAULT BOOLEAN, 
-    ratings NUMERIC
-)
+    imdb_ID NUMERIC,
+    is_favorite DEFAULT BOOLEAN, 
+    imdbRatings NUMERIC
+);
