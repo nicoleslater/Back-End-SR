@@ -9,7 +9,7 @@ const {
     updateMovie
 } = require("../queries/movies.js");
 
-const { checkName, checkBoolean } = require("../validations/checkBookmarks");
+const { checkName, checkBoolean } = require("../validations/checkMovies.js");
 const movies = express.Router();
 
 movies.get("/:id", async (req, res) => {
