@@ -11,7 +11,6 @@ CREATE TABLE movies (
     director TEXT,
     genre TEXT, 
     rated TEXT, 
-    imdb_ID INT,
     is_favorite BOOLEAN, 
     imdb_Ratings INT
 );
