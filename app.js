@@ -3,7 +3,7 @@ const cors = require("cors");
 
 const app = express();
 
-const moviesController = require("./controllers/movieController");
+const moviesController = require("./controllers/moviesController");
 
 app.use(cors()); 
 app.use(express.json());
