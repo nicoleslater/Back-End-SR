@@ -14,3 +14,9 @@ CREATE TABLE movies (
     is_favorite BOOLEAN, 
     imdb_Ratings INT
 );
+
+CREATE TABLE favorites (
+    id SERIAL PRIMARY KEY, 
+    movie_ID INT, 
+    imdb_id
+)

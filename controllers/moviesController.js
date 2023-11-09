@@ -7,7 +7,7 @@ const {
     createMovie,
     deleteMovie, 
     updateMovie
-} = require("../queries/movies");
+} = require("../queries/movies.js");
 
 const { checkName, checkBoolean } = require("../validations/checkBookmarks");
 const movies = express.Router();
