@@ -1,9 +1,9 @@
-const db = require("../db/dbConfig");
+const db = require("../db/dbConfig.js");
 
 const getAllMovies = async () => {
     try {
-        const allSongs = await db.any("SELECT * FROM movies");
-        return allSongs
+        const allMovies = await db.any("SELECT * FROM movies");
+        return allMovies
     } catch(err){
         return err
     }
@@ -20,7 +20,8 @@ const getOneMovie = async (id) => {
 
 const createMovie = async (movie) => {
     try {
-        const createdMovie = await db.one("INSERT INTO movies (title, released, director, genre, rated, is_favorite, imdb_Ratings) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING * ", [movie.title, movie.released, movie.director, movie.genre, movie.is_favorite, movie.imdb_Ratings])
+        const createdMovie = await db.one("INSERT INTO movies (title, released, director, genre, rated, is_favorite, imdb_Ratings) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING * ", [movie.title, movie.released, movie.director, movie.genre, movie.rated,movie.is_favorite, movie.imdb_Ratings])
+        return createdMovie
     } catch(error){
         return error 
     }
