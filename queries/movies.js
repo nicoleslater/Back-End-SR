@@ -42,7 +42,7 @@ const updateMovie = async(id, movie) => {
     try {
         const {title, released, director, genre, rated, is_favorite, imdb_Ratings} = movie;
         const updatedMovie = await db.one(
-            "UPDATE movies SET title=$1, released=$2, director=$3, genre=$4, rated=$5, is_favorite=$6, imdb_Ratings=$7 RETURNING *", [title, released, director, genre, rated, is_favorite, imdbRatings, id]
+            "UPDATE movies SET title=$1, released=$2, director=$3, genre=$4, rated=$5, is_favorite=$6, imdb_Ratings=$7 RETURNING *", [title, released, director, genre, rated, is_favorite, imdb_Ratings, id]
         );
         return updatedMovie
     } catch (err){
