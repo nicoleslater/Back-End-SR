@@ -1,4 +1,4 @@
-\c movies_dev;
+\c filmhunters_dev;
 
 INSERT INTO movies (title, url, released, director, genre, rated, is_favorite, imdb_Ratings)
 VALUES 
