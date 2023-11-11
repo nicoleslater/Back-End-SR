@@ -17,8 +17,7 @@ CREATE TABLE movies (
 
 -- CREATE TABLE favorites (
 --     id SERIAL PRIMARY KEY, 
---     reccomend BOOLEAN,
---     personal_rating NUMERIC,
+--     rating NUMERIC,
 --     CHECK (rating >= 0 AND rating <= 5),
 --     movie_id INTEGER REFERENCES movies(id) 
 --     ON DELETE CASCADE
