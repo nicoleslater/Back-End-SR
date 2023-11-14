@@ -1,8 +1,8 @@
 DROP DATABASE IF EXISTS movies_dev;
 
-CREATE DATABASE movies_dev;
+CREATE DATABASE filmhunters_dev;
 
-\c movies_dev;
+\c filmhunters_dev;
 
 CREATE TABLE movies (
     id SERIAL PRIMARY KEY, 
