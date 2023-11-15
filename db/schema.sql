@@ -24,4 +24,4 @@ CREATE TABLE favorites (
     CHECK (rating >= 0 AND rating <= 5),
     movie_id INTEGER REFERENCES movies(id) 
     ON DELETE CASCADE
-)
+);
