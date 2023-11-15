@@ -1,6 +1,6 @@
 const express = require("express");
 
-const favorites = express.Router();
+const favorites = express.Router({mergeParams: true});
 
 const { getOneMovie } = require("../queries/movies");
 
@@ -10,7 +10,7 @@ const {
     deleteFavorite, 
     createFavorite, 
     updateFavorite
-} = require("../queries/favorites");
+} = require("../queries/favorites.js");
 
 
 favorites.get("/", async (req, res) => {
@@ -25,6 +25,7 @@ favorites.get("/", async (req, res) => {
 });
 
 favorites.get("/:favorite_id", async (req, res) => {
+    const {favorite_id, movie_id} =req.params;
     try{
         const favorite = await getOneFavorite(favorite_id);
         const movie = await getOneMovie(movie_id);
@@ -33,6 +34,16 @@ favorites.get("/:favorite_id", async (req, res) => {
         }
     } catch(err){
         res.json(err);
+    }
+});
+
+favorites.post("/", async (req, res) => {
+    try{
+        const { favorite_id} = req.params;
+        const createdFavorite = await createFavorite(movie_id, req.body)
+        res.json(createdFavorite);
+    } catch(err){
+        res.status(400).json( { error: "Huge Error!"})
     }
 });
 
