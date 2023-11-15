@@ -1,4 +1,4 @@
-DROP DATABASE IF EXISTS movies_dev;
+DROP DATABASE IF EXISTS filmhunters_dev;
 
 CREATE DATABASE filmhunters_dev;
 
