@@ -1,8 +1,8 @@
 DROP DATABASE IF EXISTS movies_dev;
 
-CREATE DATABASE movies_dev;
+CREATE DATABASE filmhunters_dev;
 
-\c movies_dev;
+\c filmhunters_dev;
 
 CREATE TABLE movies (
     id SERIAL PRIMARY KEY, 
@@ -15,11 +15,13 @@ CREATE TABLE movies (
     imdb_Ratings INT
 );
 
--- CREATE TABLE favorites (
---     id SERIAL PRIMARY KEY, 
---     reccomend BOOLEAN,
---     personal_rating NUMERIC,
---     CHECK (rating >= 0 AND rating <= 5),
---     movie_id INTEGER REFERENCES movies(id) 
---     ON DELETE CASCADE
--- )
+CREATE TABLE favorites (
+    id SERIAL PRIMARY KEY,
+    first_name TEXT, 
+    title TEXT,
+    notes TEXT,
+    rating NUMERIC,
+    CHECK (rating >= 0 AND rating <= 5),
+    movie_id INTEGER REFERENCES movies(id) 
+    ON DELETE CASCADE
+);
