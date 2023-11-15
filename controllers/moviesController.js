@@ -11,6 +11,7 @@ const {
 const favoritesController = require("../controllers/favoritesController.js");
 
 const { checkName, checkBoolean } = require("../validations/checkMovies.js");
+
 const movies = express.Router();
 
 movies.use("/:movie_id/favorites", favoritesController)
