@@ -25,7 +25,7 @@ favorites.get("/", async (req, res) => {
 });
 
 favorites.get("/:favorite_id", async (req, res) => {
-    const {favorite_id, movie_id} =req.params;
+    const { favorite_id, movie_id } = req.params;
     try{
         const favorite = await getOneFavorite(favorite_id);
         const movie = await getOneMovie(movie_id);
@@ -39,7 +39,7 @@ favorites.get("/:favorite_id", async (req, res) => {
 
 favorites.post("/", async (req, res) => {
     try{
-        const { favorite_id} = req.params;
+        const { movie_id } = req.params;
         const createdFavorite = await createFavorite(movie_id, req.body)
         res.json(createdFavorite);
     } catch(err){
