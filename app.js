@@ -3,13 +3,13 @@ const cors = require("cors");
 
 const app = express();
 
-const moviesController = require("./controllers/moviesController");
+const movieController = require("./controllers/movieController");
 // const favoritesController = require("./controllers/favoritesController");
 
 app.use(cors()); 
 app.use(express.json());
 
-app.use("/movies", moviesController);
+app.use("/movies", movieController);
 // app.use("/favorites", favoritesController);
 
 app.get("/", (req, res) => {
