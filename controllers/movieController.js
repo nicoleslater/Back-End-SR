@@ -17,7 +17,7 @@ const movies = express.Router();
 movies.use("/:movie_id/favorites", favoritesController)
 
 movies.get("/:id", async (req, res) => {
-    const {id} = req.params; 
+    const { id } = req.params; 
     const oneMovie = await getOneMovie(id)
     if(oneMovie){
         res.json(oneMovie)
@@ -48,7 +48,7 @@ movies.post("/", checkName, checkBoolean, async (req, res) => {
 
 movies.delete("/:id", async (req, res) => {
     try {
-        const {id} = req.params; 
+        const { id } = req.params; 
         const deletedMovie = await deleteMovie(id); 
         if(deletedMovie){
             res.status(200).json({success: true, payload: {data: deletedMovie}})
@@ -61,7 +61,7 @@ movies.delete("/:id", async (req, res) => {
 });
 
 movies.put("/:id", async(req, res) => {
-    const {id} = req.params; 
+    const { id } = req.params; 
     const updatedMovie = await updateMovie(id, req.body);
     if(updatedMovie.id){
         res.status(200).json(updatedMovie);
