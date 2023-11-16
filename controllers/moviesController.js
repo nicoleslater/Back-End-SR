@@ -8,7 +8,7 @@ const {
     updateMovie
 } = require("../queries/movies.js");
 
-const favoritesController = require("./favoriteController.js");
+const favoritesController = require("./favoritesController.js");
 
 const { checkName, checkBoolean } = require("../validations/checkMovies.js");
 

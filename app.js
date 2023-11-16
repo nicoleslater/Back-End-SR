@@ -3,7 +3,7 @@ const cors = require("cors");
 
 const app = express();
 
-const movieController = require("./controllers/movieController");
+const movieController = require("./controllers/moviesController");
 // const favoritesController = require("./controllers/favoritesController");
 
 app.use(cors()); 
