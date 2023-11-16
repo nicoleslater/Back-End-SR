@@ -8,13 +8,13 @@ const {
     updateMovie
 } = require("../queries/movies.js");
 
-// const favoritesController = require("./favoritesController.js");
+const favoritesController = require("./favoritesController.js");
 
 const { checkName, checkBoolean } = require("../validations/checkMovies.js");
 
 const movies = express.Router();
 
-// movies.use("/:movie_id/favorites", favoritesController)
+movies.use("/:movie_id/favorites", favoritesController)
 
 movies.get("/:id", async (req, res) => {
     const { id } = req.params; 
