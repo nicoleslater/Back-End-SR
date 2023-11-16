@@ -30,7 +30,7 @@ favorites.get("/:favorite_id", async (req, res) => {
         const favorite = await getOneFavorite(favorite_id);
         const movie = await getOneMovie(movie_id);
         if(favorite.id){
-            res.json({...movie, favorite });
+            res.json({ ...movie, favorite });
         }
     } catch(err){
         res.json(err);
