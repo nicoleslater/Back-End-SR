@@ -3,7 +3,7 @@ const checkName = (req, res, next) => {
         console.log("Name is Okay")
         next()
     } else {
-        res.status(400).json({error: "Name is required!"})
+        res.status(400).json({ error: "Name is required!" })
     }
 };
 
@@ -11,7 +11,7 @@ const checkBoolean = (req, res, next) => {
     if(req.body.is_favorite === true || req.body.is_favorite === false){
         next()
     } else {
-        res.status(400).json({error: "is_favorite must be a boolean value"})
+        res.status(400).json({ error: "is_favorite must be a boolean value" })
     }
 }
 
