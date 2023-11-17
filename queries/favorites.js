@@ -10,16 +10,16 @@ const getAllFavorites = async (movie_id) => {
         return err
     }
 
-}
+};
 
 const getOneFavorite = async (id) => {
     try{
-        const oneFavorite = await db.one("SELECT * FROM favorites WHERE id=$1", id)
+        const oneFavorite = await db.one("SELECT * FROM favorites WHERE id=$1", id);
         return oneFavorite
     } catch(error){
         return error
     }
-}
+};
 
 const deleteFavorite = async (id) => {
     try{
@@ -31,7 +31,7 @@ const deleteFavorite = async (id) => {
     } catch(err){
         return err
     }
-}
+};
 
 const createFavorite = async (movie_id, favorite) => {
     try{
@@ -51,7 +51,7 @@ const createFavorite = async (movie_id, favorite) => {
 
 const updateFavorite = async (favorite) => {
     try{
-        const { first_name, title, notes, rating, id, movie_id} = favorite;
+        const { first_name, title, notes, rating, movie_id, id } = favorite;
         const updatedFavorite = await db.one(
             `UPDATE favorites SET
             first_name=$1, title=$2, notes=$3, rating=$4, movie_id=$5 WHERE id=$6 
