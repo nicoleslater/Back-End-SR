@@ -1,6 +1,6 @@
 const express = require("express");
 
-const favorites = express.Router({mergeParams: true});
+const favorites = express.Router({ mergeParams: true });
 
 const { getOneMovie } = require("../queries/movies.js");
 
