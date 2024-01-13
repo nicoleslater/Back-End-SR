@@ -20,7 +20,15 @@ const getOneMovie = async (id) => {
 
 const createMovie = async (movie) => {
     try {
-        const createdMovie = await db.one("INSERT INTO movies (title, released, director, genre, rated, is_favorite, imdb_Ratings) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING * ", [movie.title, movie.released, movie.director, movie.genre, movie.rated,movie.is_favorite, movie.imdb_Ratings])
+        const {title, url, released, director, genre, rated, is_favorite, imdb_Ratings} = movie;
+        const createdMovie = await db.one(
+            `INSERT INTO snacks(title, url, released, director, genre, rated, is_favorite, imdb_Ratings)
+            VALUES ($1,$2,$3,$4,$5,$6,$7,$8)
+            RETURNING *`,
+            [title, url, released, director, genre, rated, is_favorite, imdb_Ratings]
+        );
+        // const createdMovie = await db.one("INSERT INTO movies (title, url, released, director, genre, rated, is_favorite, imdb_Ratings) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING * ", 
+        // [movie.title, movie.released, movie.director, movie.genre, movie.rated,movie.is_favorite, movie.imdb_Ratings])
         return createdMovie
     } catch(error){
         return error 
