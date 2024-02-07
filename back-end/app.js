@@ -12,7 +12,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/movies", moviesController);
-
+app.use("/movies/:favorite_id", favoritesController);
 
 
 app.get("/", (req, res) => {
