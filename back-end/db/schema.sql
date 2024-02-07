@@ -22,6 +22,6 @@ CREATE TABLE favorites (
     notes TEXT,
     rating NUMERIC,
     CHECK (rating >= 0 AND rating <= 5),
-    movie_id INTEGER REFERENCES movies(id) 
+    movie_id INTEGER REFERENCES movies (id) 
     ON DELETE CASCADE
 );
