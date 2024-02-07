@@ -1,15 +1,18 @@
 const express = require("express");
 const cors = require("cors");
+const morgan = require('morgan');
 
 const app = express();
 
 const moviesController = require("./controllers/moviesController");
+const favoritesController = require("./controllers/favoritesController");
 
-
+app.use(morgan('dev'));
 app.use(cors()); 
 app.use(express.json());
 
 app.use("/movies", moviesController);
+
 
 
 app.get("/", (req, res) => {
