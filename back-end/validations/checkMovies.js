@@ -11,7 +11,7 @@ const checkBoolean = (req, res, next) => {
     if(req.body.dvd === true || req.body.dvd === false){
         next()
     } else {
-        res.status(400).json({ error: "is_favorite must be a boolean value" })
+        res.status(400).json({ error: "dvd must be a boolean value" })
     }
 }
 
