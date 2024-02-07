@@ -1,4 +1,4 @@
-const db = require("../back-end/db/dbConfig.js");
+const db = require("../db/dbConfig.js");
 
 const getAllMovies = async () => {
     try {
