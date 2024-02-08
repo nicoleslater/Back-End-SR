@@ -1,9 +1,9 @@
 const checkName = (req, res, next) => {
-    if(req.body.name){
-        console.log("Name is Okay")
+    if(req.body.title){
+        console.log("Title is Okay")
         next()
     } else {
-        res.status(400).json({ error: "Name is required!" })
+        res.status(400).json({ error: "Title is required!" })
     }
 };
 
