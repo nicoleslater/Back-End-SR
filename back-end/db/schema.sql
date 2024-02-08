@@ -7,7 +7,7 @@ CREATE DATABASE filmhunters_dev;
 CREATE TABLE movies (
     id SERIAL PRIMARY KEY, 
     title TEXT NOT NULL, 
-    released DATE, 
+    released TEXT, 
     director TEXT,
     genre TEXT, 
     rated TEXT, 
