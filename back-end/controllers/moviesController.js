@@ -2,10 +2,8 @@ const express = require("express");
 
 const { getAllMovies, getOneMovie, deleteMovie, createMovie, updateMovie } = require("../queries/movies.js");
 
-const favoritesController = require("./favoritesController.js");
-
 const { checkBoolean, checkName } = require("../validations/checkMovies.js");
-
+const favoritesController = require("./favoritesController.js");
 const movies = express.Router();
 
 movies.use("/:movie_id/favorites", favoritesController)
